@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team | 180 Degrees Consulting Baylor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/180dc-logo.png">
+  <style>
+    .team-pattern-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .team-pattern-bg::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          transparent 48px,
+          rgba(34,163,82,0.025) 48px,
+          rgba(34,163,82,0.025) 96px
+        );
+      z-index: 0;
+      pointer-events: none;
+    }
+    .team-pattern-bg > .container { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo"><img src="assets/images/180dc-logo.png" alt="180DC Baylor"></a>
+      <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#mission">Mission</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="applications.html" class="nav-cta">Apply</a></li>
+        <li><a href="donations.html" class="btn-donate">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero team-hero">
+  <div class="hero-background" style="background-image:url('assets/images/group-formal.png');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <h1 class="hero-title">Our Team</h1>
+      <p class="hero-description">Meet the student leaders driving social impact at Baylor University</p>
+    </div>
+  </div>
+</section>
+
+<!-- Team Content with diagonal stripe pattern -->
+<section class="section team-pattern-bg">
+  <div class="container">
+    <!-- Metrics -->
+    <div class="team-metrics fade-up">
+      <div class="team-metric">
+        <div class="metric-num">4</div>
+        <p>Project Leaders</p>
+      </div>
+      <div class="team-metric">
+        <div class="metric-num">50+</div>
+        <p>Active Consultants</p>
+      </div>
+      <div class="team-metric">
+        <div class="metric-num">8</div>
+        <p>Majors Represented</p>
+      </div>
+    </div>
+
+    <!-- Full leadership grid — 3x3 -->
+    <div class="section-header centered fade-up">
+      <span class="section-label">Our Leadership</span>
+      <h2 class="section-title">The Team Behind the Impact</h2>
+    </div>
+
+    <div class="team-page-grid">
+      <!-- Row 1: President, VP Internal, VP External -->
+      <div class="team-page-card fade-up stagger-1">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-user" style="font-size:3rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>Tristan Domonica</h3>
+          <p class="team-role">President</p>
+          <p class="team-major">Finance &amp; Professional Selling</p>
+        </div>
+      </div>
+      <div class="team-page-card fade-up stagger-2">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-user" style="font-size:3rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>Zachary Hayton</h3>
+          <p class="team-role">VP of Internal</p>
+          <p class="team-major">Computer Science &amp; Finance</p>
+        </div>
+      </div>
+      <div class="team-page-card fade-up stagger-3">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-user" style="font-size:3rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>Abigail Green</h3>
+          <p class="team-role">VP of External</p>
+          <p class="team-major">Accounting &amp; MIS</p>
+        </div>
+      </div>
+      <!-- Row 2: Chairman, Dir Marketing, Dir Sponsorships -->
+      <div class="team-page-card fade-up stagger-4">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-user" style="font-size:3rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>Warren Huang</h3>
+          <p class="team-role">Chairman of the Board</p>
+          <p class="team-major">Economics</p>
+        </div>
+      </div>
+      <div class="team-page-card fade-up stagger-5">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-bullhorn" style="font-size:2.5rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>Ava Truan</h3>
+          <p class="team-role">Director of Marketing</p>
+          <p class="team-major">—</p>
+        </div>
+      </div>
+      <div class="team-page-card fade-up stagger-6">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-handshake" style="font-size:2.5rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>Casey McCabe</h3>
+          <p class="team-role">Director of Sponsorships</p>
+          <p class="team-major">—</p>
+        </div>
+      </div>
+      <!-- Row 3: Dir Recruitment, Dir Operations, Dir Prof Dev -->
+      <div class="team-page-card fade-up stagger-1">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-user-plus" style="font-size:2.5rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>TBD</h3>
+          <p class="team-role">Director of Recruitment</p>
+          <p class="team-major">—</p>
+        </div>
+      </div>
+      <div class="team-page-card fade-up stagger-2">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-cogs" style="font-size:2.5rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>TBD</h3>
+          <p class="team-role">Director of Operations</p>
+          <p class="team-major">—</p>
+        </div>
+      </div>
+      <div class="team-page-card fade-up stagger-3">
+        <div class="team-image" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;"><i class="fas fa-graduation-cap" style="font-size:2.5rem;color:var(--gray-300);"></i></div>
+        <div class="team-info">
+          <h3>TBD</h3>
+          <p class="team-role">Director of Professional Development</p>
+          <p class="team-major">—</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <h2>Want to Lead With Us?</h2>
+      <p>We're always looking for passionate Baylor students ready to drive social impact.</p>
+      <div class="cta-actions">
+        <!-- Updated recruitment process: invite prospective members to schedule a coffee chat and fill our interest form -->
+        <a href="https://docs.google.com/spreadsheets/d/1LHt5dxdYbbE_ztkog79ATWDSZVejpqEOfrOyqNDli5s/edit?usp=sharing" target="_blank" class="btn btn-primary">Book a Coffee Chat</a>
+        <a href="https://forms.gle/9at8WxwWQ2SeYE9C7" target="_blank" class="btn btn-outline">Interest Form</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/images/180dc-logo.png" alt="180DC Baylor" class="footer-logo">
+        <p>Part of the global 180 Degrees Consulting network</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column"><h4>Get Involved</h4><ul><li><a href="applications.html">Apply</a></li><li><a href="donations.html">Donate</a></li><li><a href="index.html#booking">Book a Chat</a></li></ul></div>
+        <div class="footer-column"><h4>Connect</h4><div class="social-links"><a href="https://www.linkedin.com/company/180bu" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://www.instagram.com/180degreesbaylor?igsh=MW9zNG5hMTExOWlycw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="mailto:baylor@180dc.org" aria-label="Email"><i class="fas fa-envelope"></i></a></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 180 Degrees Consulting Baylor. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
