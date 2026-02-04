@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/overrides.css">
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/180dc-logo.png">
 </head>
 <body>
 
+<!-- Navigation -->
 <nav class="navbar" id="navbar">
   <div class="container">
     <div class="nav-wrapper">
@@ -27,11 +28,13 @@
         <li><a href="team.html">Team</a></li>
         <li><a href="applications.html" class="nav-cta">Apply</a></li>
         <li><a href="donations.html" class="btn-donate">Donate</a></li>
+        <!-- <a href="projects.html">Projects</a> -->
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- ========== 1. HERO ========== -->
 <section class="hero">
   <div class="hero-background" id="heroBackground"></div>
   <div class="hero-overlay"></div>
@@ -42,7 +45,7 @@
       <p class="hero-tagline">A Mission of Social Impact</p>
       <p class="hero-description">Transforming good organisations into great ones by pairing passionate Baylor students with socially-conscious organisations.</p>
       <div class="hero-actions">
-        <a href="https://docs.google.com/spreadsheets/d/1LHt5dxdYbbE_ztkog79ATWDSZVejpqEOfrOyqNDli5s/edit?usp=sharing" target="_blank" class="btn btn-primary">Book a Coffee Chat</a>
+        <a href="#booking" class="btn btn-primary">Book a Coffee Chat</a>
         <a href="#mission" class="btn btn-outline">Learn More</a>
       </div>
     </div>
@@ -51,23 +54,9 @@
     <span></span><span></span><span></span><span></span>
   </div>
 </section>
+  
 
-<section class="section" style="padding-top:40px;padding-bottom:40px;">
-  <div class="container">
-    <div class="cta-box fade-up" style="text-align:center;">
-      <h3 style="margin-bottom:10px;">Recruiting Is Open</h3>
-      <p style="max-width:720px;margin:0 auto 20px;">
-        Our recruiting process begins with a coffee chat. If you’re interested in joining
-        180 Degrees Consulting at Baylor, start by booking a short conversation to learn more
-        about the organization and next steps.
-      </p>
-      <a href="https://docs.google.com/spreadsheets/d/1LHt5dxdYbbE_ztkog79ATWDSZVejpqEOfrOyqNDli5s/edit?usp=sharing" target="_blank" class="btn btn-primary">
-        Book a Coffee Chat
-      </a>
-    </div>
-  </div>
-</section>
-
+<!-- ========== 2. MISSION + VIDEO ========== -->
 <section id="mission" class="section">
   <div class="container">
     <div class="mission-grid">
@@ -113,26 +102,82 @@
   </div>
 </section>
 
+<!-- ========== 3. CONNECT / CALENDAR BOOKING ========== -->
 <section id="booking" class="section booking-section">
   <div class="container">
     <div class="booking-wrapper">
       <div class="booking-content fade-up">
         <span class="section-label">Connect With Us</span>
         <h2 class="section-title">Coffee Chats for Prospective Clients</h2>
-        <p>If you represent a nonprofit or social enterprise interested in collaborating with us, please use our coffee chat sheet to find a time with our leadership.</p>
+        <p>If you represent a nonprofit or social enterprise interested in collaborating with us, schedule a coffee chat with our leadership to explore how we can support your mission.</p>
 
-        <a href="https://docs.google.com/spreadsheets/d/1LHt5dxdYbbE_ztkog79ATWDSZVejpqEOfrOyqNDli5s/edit?usp=sharing" target="_blank" class="btn btn-primary">
-          Open the Coffee Chat Sheet
-        </a>
+        <div class="calendar-widget" id="calendarWidget">
+          <!-- Step 0: Pick a team member -->
+          <div class="team-picker" id="teamPicker">
+            <h5 style="margin-bottom:14px;">Who would you like to chat with?</h5>
+            <div class="team-picker-grid">
+              <button class="team-picker-card" data-name="Tristan Domonica" data-role="President" data-email="Tristan_Demotica1@baylor.edu" data-img="assets/images/tristan.png">
+                <img src="assets/images/tristan.png" alt="Tristan Domonica">
+                <span class="picker-name">Tristan Domonica</span>
+                <span class="picker-role">President</span>
+              </button>
+              <button class="team-picker-card" data-name="Abigail Green" data-role="VP of External" data-email="Abbie_Green1@baylor.edu" data-img="assets/images/abigail.png">
+                <img src="assets/images/abigail.png" alt="Abigail Green">
+                <span class="picker-name">Abigail Green</span>
+                <span class="picker-role">VP of External</span>
+              </button>
+            </div>
+          </div>
 
-        <div class="calendar-widget" id="calendarWidget" style="display:none;">
-          <div class="team-picker" id="teamPicker"></div>
-          <div class="calendar-step" id="calendarStep" style="display:none;"></div>
-          <div class="booking-confirmation" id="bookingConfirmation"></div>
+          <!-- Step 1: Calendar (hidden until team member selected) -->
+          <div class="calendar-step" id="calendarStep" style="display:none;">
+            <button class="btn btn-text" id="backToTeam" style="margin-bottom:10px;">← Choose someone else</button>
+            <p class="selected-member-info" id="selectedMemberInfo" style="font-size:0.88rem;font-weight:600;color:var(--green-700);margin-bottom:14px;"></p>
+            <div class="calendar-header">
+              <button id="calPrev"><i class="fas fa-chevron-left"></i></button>
+              <h4>February 2026</h4>
+              <button id="calNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="calendar-grid"></div>
+
+            <div class="time-slots">
+              <h5>Available Times</h5>
+              <div class="time-slots-grid">
+                <div class="time-slot" data-time="1:00 PM">1:00 PM</div>
+                <div class="time-slot" data-time="1:30 PM">1:30 PM</div>
+                <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
+                <div class="time-slot" data-time="2:30 PM">2:30 PM</div>
+              </div>
+            </div>
+
+            <div class="booking-details">
+              <p style="font-size:0.88rem;font-weight:600;color:var(--green-700);margin-bottom:14px;" id="selectedInfo"></p>
+              <div class="input-group">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Your name">
+              </div>
+              <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="your@email.com">
+              </div>
+              <div class="input-group">
+                <label>Comments (optional)</label>
+                <textarea name="comments" placeholder="Any questions?" rows="2"></textarea>
+              </div>
+              <button class="btn btn-primary btn-full" id="confirmBooking">Confirm Booking</button>
+              <button class="btn btn-text" id="backToCal" style="width:100%;text-align:center;margin-top:6px;">← Back</button>
+            </div>
+          </div>
+
+          <div class="booking-confirmation" id="bookingConfirmation">
+            <i class="fas fa-envelope-open-text" style="font-size:2.5rem;color:var(--green-600);"></i>
+            <h3 style="margin-top:12px;">Opened in Your Email Client</h3>
+            <p style="color:var(--gray-600);margin-top:8px;">A pre-drafted email should have opened in your email app. Just review it and hit <strong>Send</strong> to confirm your coffee chat!</p>
+            <p style="color:var(--gray-400);margin-top:12px;font-size:0.85rem;">Didn't see it? Try <a href="mailto:baylor@180dc.org?subject=Coffee%20Chat%20180" style="color:var(--green-700);font-weight:600;">emailing us directly</a>.</p>
+          </div>
         </div>
       </div>
-
-      <div class="booking-image fade-up stagger-2" id="bookingImagePanel" style="display:none;">
+      <div class="booking-image fade-up stagger-2" id="bookingImagePanel">
         <img src="assets/images/tristan.png" alt="Tristan Domonica – President" id="bookingImg">
         <div class="booking-card">
           <h4 id="bookingCardName">Tristan Domonica</h4>
@@ -143,6 +188,7 @@
   </div>
 </section>
 
+<!-- ========== 4. GLOBAL NETWORK IMPACT ========== -->
 <section id="impact" class="section stats-section">
   <div class="container">
     <div class="stats-header fade-up" style="text-align:center;">
@@ -170,6 +216,7 @@
   </div>
 </section>
 
+<!-- ========== 5. HAVE A PROJECT? CTA ========== -->
 <section class="section">
   <div class="container">
     <div class="cta-box fade-up">
@@ -180,6 +227,7 @@
   </div>
 </section>
 
+<!-- ========== 6. TRUSTED BY ========== -->
 <section class="section partners-section">
   <div class="container">
     <div class="section-header centered fade-up">
@@ -192,6 +240,7 @@
   </div>
 </section>
 
+<!-- ========== 7. LEADERSHIP ========== -->
 <section id="team" class="section">
   <div class="container">
     <div class="section-header centered fade-up">
@@ -199,7 +248,6 @@
       <h2 class="section-title">Leadership at Baylor</h2>
       <p class="section-description">Passionate students driving social impact through strategic consulting</p>
     </div>
-
     <div class="team-grid">
       <div class="team-card fade-up stagger-1">
         <div class="team-image"><img src="assets/images/tristan.png" alt="Tristan Domonica"></div>
@@ -209,7 +257,6 @@
           <p class="team-major">Finance &amp; Professional Selling</p>
         </div>
       </div>
-
       <div class="team-card fade-up stagger-2">
         <div class="team-image"><img src="assets/images/warren.png" alt="Warren Huang"></div>
         <div class="team-info">
@@ -218,7 +265,6 @@
           <p class="team-major">Economics</p>
         </div>
       </div>
-
       <div class="team-card fade-up stagger-3">
         <div class="team-image"><img src="assets/images/abigail.png" alt="Abigail Green"></div>
         <div class="team-info">
@@ -227,7 +273,6 @@
           <p class="team-major">Accounting &amp; MIS</p>
         </div>
       </div>
-
       <div class="team-card fade-up stagger-4">
         <div class="team-image"><img src="assets/images/zachary.png" alt="Zachary Hayton"></div>
         <div class="team-info">
@@ -236,28 +281,11 @@
           <p class="team-major">Computer Science &amp; Finance</p>
         </div>
       </div>
-
-      <div class="team-card fade-up stagger-5">
-        <div class="team-image"><img src="assets/images/casey.png" alt="Casey"></div>
-        <div class="team-info">
-          <h3>Casey</h3>
-          <p class="team-role">Executive Team</p>
-          <p class="team-major">Baylor University</p>
-        </div>
-      </div>
-
-      <div class="team-card fade-up stagger-6">
-        <div class="team-image"><img src="assets/images/ava.png" alt="Ava"></div>
-        <div class="team-info">
-          <h3>Ava</h3>
-          <p class="team-role">Executive Team</p>
-          <p class="team-major">Baylor University</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
+<!-- ========== 8. TESTIMONIALS ========== -->
 <section class="section testimonials-section">
   <div class="container">
     <div class="section-header centered fade-up">
@@ -297,6 +325,7 @@
   </div>
 </section>
 
+<!-- ========== 11. LET'S CONNECT (email-based) ========== -->
 <section id="contact" class="section contact-section">
   <div class="container">
     <div class="contact-wrapper fade-up">
@@ -332,6 +361,7 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -352,7 +382,7 @@
           <ul>
             <li><a href="applications.html">Apply</a></li>
             <li><a href="donations.html">Donate</a></li>
-            <li><a href="#booking">Coffee Chats</a></li>
+            <li><a href="#booking">Book a Chat</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -371,6 +401,7 @@
   </div>
 </footer>
 
+<!-- Modals -->
 <div id="projectModal" class="modal">
   <div class="modal-overlay"></div>
   <div class="modal-container">
